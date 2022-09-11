@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" id="title-font" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,100;0,400;0,500;0,700;1,300&amp;display=swap">
+    <link rel="stylesheet" id="body-font" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,300&amp;display=swap">
+
+    <!-- Styles -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body class="antialiased bg-body bg-body-image bg-body-position bg-body-repeat bg-body-size font-body">
+    <main>
+                    <header class="transition-all duration-200 ease-in-out z-10  absolute w-full  " x-data="header" :class="{'backdrop-blur-lg': !scrollAtTop}"
+	@scroll.window="scrollAtTop = (window.pageYOffset > 0) ? false : true"
+>
+	<div class="max-w-6xl px-4 mx-auto md:px-8">
+		<nav class="flex items-center justify-between py-6">
+			<div class="flex items-center justify-between">
+				<a href="/">
+										<img
+						class="max-h-12 w-auto"
+						src="assets/cardworldlogo.png"
+					/>
+									</a>
+
+				<div class="hidden ml-8 space-x-4 md:flex">
+											<a href="#features-1"  class="text-izLXwTuR-link hover:text-izLXwTuR-link-hover"  x-on:click="scroll('#features-1')" >
+    Features
+</a>											<a href="#pricing-3"  class="text-izLXwTuR-link hover:text-izLXwTuR-link-hover"  x-on:click="scroll('#pricing-3')" >
+    Pricing
+</a>											<a href="mailto:info@card-world.io"  target="_blank"  class="text-izLXwTuR-link hover:text-izLXwTuR-link-hover" >
+    Contact
+</a>									</div>
+			</div>
+
+			<button type="button" class="text-izLXwTuR-link focus:outline-none md:hidden" x-on:click="mobileMenuOpen = !mobileMenuOpen">
+				<svg
+					class="w-6 h-6"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					aria-hidden="true"
+					x-show="!mobileMenuOpen"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+
+				<svg
+					class="w-6 h-6"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+					x-show="mobileMenuOpen"
+					x-cloak
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+
+			<div class="items-center hidden space-x-4 text-izLXwTuR-link md:flex">
+									<a href="https://card-world.hyper.co/login" class="inline-block bg-primary py-2 px-4 rounded-button text-base font-medium text-primary-button-text transition-colors duration-300 ease-in-out hover:bg-primary-700" >
+            Dashboard
+        </a>
+    
+							</div>
+		</nav>
+	</div>
+
+	<div
+		class="absolute inset-x-0 px-2 top-2 md:hidden"
+		x-show="mobileMenuOpen"
+		x-cloak
+		x-transition:enter="duration-150 ease-out"
+		x-transition:enter-start="opacity-0 scale-95"
+		x-transition:enter-end="opacity-100 scale-100"
+		x-transition:leave="duration-100 ease-in"
+		x-transition:leave-start="opacity-100 scale-100"
+		x-transition:leave-end="opacity-0 scale-95"
+	>
+		<div class="relative p-4 bg-primary rounded-main">
+			<div class="absolute cursor-pointer top-4 right-4 text-izLXwTuR-link" @click="mobileMenuOpen = false">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</div>
+
+			<a href="/" class="block mb-4">
+									<img
+						class="max-h-12 w-auto"
+						src="assets/cardworldlogo.png"
+					/>
+							</a>
+
+			<div class="space-y-2">
+									<a href="#features-1"  class="text-izLXwTuR-link hover:text-izLXwTuR-link-hover block"  x-on:click="scroll('#features-1')" >
+    Features
+</a>									<a href="#pricing-3"  class="text-izLXwTuR-link hover:text-izLXwTuR-link-hover block"  x-on:click="scroll('#pricing-3')" >
+    Pricing
+</a>									<a href="mailto:info@card-world.io"  target="_blank"  class="text-izLXwTuR-link hover:text-izLXwTuR-link-hover block" >
+    Contact
+</a>							</div>
+			<div class="mt-4 space-y-2 text-izLXwTuR-link">
+									<a href="https://card-world.hyper.co/login" class="inline-block bg-primary py-2 px-4 rounded-button text-base font-medium text-primary-button-text transition-colors duration-300 ease-in-out hover:bg-primary-700 w-full text-center bg-white text-primary hover:bg-white hover:bg-opacity-75" >
+            Dashboard
+        </a>
+    
+							</div>
+		</div>
+	</div>
+</header>
+                    <section id="hero-1" class="relative py-20  px-4 md:px-8   overflow-hidden">
+        
+        <div class="pointer-events-none absolute z-[-1] inset-0  bg-TAXUdhZUvw8Qp7tOgh3k-section-background  "></div>
+
+                    <div class="max-w-6xl mx-auto">
+                <div class="grid items-center max-w-md grid-cols-12 gap-4 mx-auto lg:mt-16 lg:max-w-none lg:gap-12">
+	<div class="col-span-12 text-center lg:col-span-6 lg:text-left">
+				<h1 class="w-full text-5xl font-bold font-title text-header text-TAXUdhZUvw8Qp7tOgh3k-header tracking-tight lg:text-7xl lg:max-w-xl" data-aos="fade-up" data-aos-delay="50">
+			<span>Card World </span><span class="text-primary"></span>
+		</h1>
+					<div class="max-w-lg mt-4 text-content text-TAXUdhZUvw8Qp7tOgh3k-body lg:mt-6" data-aos="fade-up" data-aos-delay="100"><p><strong>The only all in one retail restock group you will ever need. Covering all hot and profitable resell products to ensure you secure the product you need in order to be successful. Increase your success with access to industry leading tools and products that will elevate your reselling career and maximize your overall profit. Don't miss the chance to add value to your life watching from the sidelines. Join our family today!&nbsp;</strong></p></div>
+		
+			</div>
+	<div class="col-span-12 mt-4 lg:col-span-6 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
+		<img src="assets/cardworldlogo.png" class="w-full mx-auto drop-shadow-main" />
+	</div>
+</div>            </div>
+            </section>
+
+                    <section id="features-1" class="relative py-20  px-4 md:px-8   overflow-hidden">
+        
+        <div class="pointer-events-none absolute z-[-1] inset-0  bg-t2hYzSQS-section-background  "></div>
+
+                                                        <div class="max-w-6xl mx-auto">
+                        <div class="relative max-w-5xl text-center mx-auto mb-12">
+        <h3 class="text-5xl font-bold font-title text-header text-t2hYzSQS-header" data-aos="fade-up" data-aos-delay="50">Features </h3>    
+    <div class="w-full h-[2px] max-w-3xl  mx-auto  mt-7 mb-16 bg-primary bg-opacity-50" data-aos="fade-up" data-aos-delay="150"></div>
+</div>                    </div>
+                
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-wrap justify-center mt-12 gap-y-5 md:-mx-5">
+			<div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 md:px-2">
+			<div class="w-full h-full text-center bg-t2hYzSQS-feature-background p-8 shadow-main rounded-main" data-aos="fade-up" data-aos-delay="150">
+				<div class="w-8 h-8  mx-auto ">
+					<img src="https://cookgroup.tools/storage/placeholders/icon.png" />
+				</div>
+				<p class="mt-2 text-lg font-medium font-title text-header text-t2hYzSQS-header">Monitors</p>
+				<div class="mt-2 text-content text-t2hYzSQS-body"><p>Access to the best restock monitors on the market that alert of new products dropping or restocking&nbsp;</p></div>
+			</div>
+		</div>
+			<div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 md:px-2">
+			<div class="w-full h-full text-center bg-t2hYzSQS-feature-background p-8 shadow-main rounded-main" data-aos="fade-up" data-aos-delay="250">
+				<div class="w-8 h-8  mx-auto ">
+					<img src="https://cookgroup.tools/storage/placeholders/icon.png" />
+				</div>
+				<p class="mt-2 text-lg font-medium font-title text-header text-t2hYzSQS-header">Investments</p>
+				<div class="mt-2 text-content text-t2hYzSQS-body"><p>Boots your portfolio with expert calls and acquisitions such as coins, sealed games, retail drops and more.</p></div>
+			</div>
+		</div>
+			<div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 md:px-2">
+			<div class="w-full h-full text-center bg-t2hYzSQS-feature-background p-8 shadow-main rounded-main" data-aos="fade-up" data-aos-delay="350">
+				<div class="w-8 h-8  mx-auto ">
+					<img src="https://cookgroup.tools/storage/placeholders/icon.png" />
+				</div>
+				<p class="mt-2 text-lg font-medium font-title text-header text-t2hYzSQS-header">Emerging Markets </p>
+				<div class="mt-2 text-content text-t2hYzSQS-body"><p>Find opportunities for financial growth in trending markets such as blockchain media, options, mining, strategic passive income streams, and cutting edge digital assets.</p></div>
+			</div>
+		</div>
+			<div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 md:px-2">
+			<div class="w-full h-full text-center bg-t2hYzSQS-feature-background p-8 shadow-main rounded-main" data-aos="fade-up" data-aos-delay="450">
+				<div class="w-8 h-8  mx-auto ">
+					<img src="https://cookgroup.tools/storage/placeholders/icon.png" />
+				</div>
+				<p class="mt-2 text-lg font-medium font-title text-header text-t2hYzSQS-header">Arbitrage</p>
+				<div class="mt-2 text-content text-t2hYzSQS-body"><p>Dominate the markets with exclusive auctions, selling/botting tools, grading guidance, Amazon Ungating, FBA Leads, and business creation tools.</p></div>
+			</div>
+		</div>
+			<div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 md:px-2">
+			<div class="w-full h-full text-center bg-t2hYzSQS-feature-background p-8 shadow-main rounded-main" data-aos="fade-up" data-aos-delay="550">
+				<div class="w-8 h-8  mx-auto ">
+					<img src="https://cookgroup.tools/storage/placeholders/icon.png" />
+				</div>
+				<p class="mt-2 text-lg font-medium font-title text-header text-t2hYzSQS-header">Passive Income </p>
+				<div class="mt-2 text-content text-t2hYzSQS-body"><p>Find and grow numerous avenues such as generating earnings from a rental, limited partnership, or other enterprise in which a person is not actively involved.</p><p>&nbsp;</p></div>
+			</div>
+		</div>
+	</div>
+                </div>
+                        </section>
+
+                    <section id="pricing-3" class="relative py-20  px-4 md:px-8   overflow-hidden">
+        
+        <div class="pointer-events-none absolute z-[-1] inset-0  bg-0JZnft6S-section-background  "></div>
+
+                    <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col items-start max-w-4xl mx-auto md:flex-row">
+    <div class="flex-1 md:mr-6 lg:mr-0">
+        <div class="max-w-prose">
+            <h2 class="text-5xl font-bold font-title text-header text-0JZnft6S-title mb-6" data-aos="fade-up" data-aos-delay="0">
+                Ready to get started?
+            </h2>
+            <div class="mb-4 text-lg text-content text-0JZnft6S-body font-body" data-aos="fade-up" data-aos-delay="50">
+                <p><strong>Click the button on the right to join the best group around and being securing your retail product with ease! The process has never been easier thanks to our help and we will ensure you achieve the goas you are looking to accomplish!&nbsp;</strong></p>
+            </div>
+    
+            <div class="space-y-2">
+                            </div>
+        </div>
+    </div>
+
+    <div class="w-full flex flex-col items-center justify-center mt-6 px-16 py-8 bg-0JZnft6S-background border shadow border-0JZnft6S-border md:w-auto lg:mt-12" data-aos="fade-up" data-aos-delay="150">
+        <div>
+            <div class="flex">
+                <span class="pt-4 text-xl text-primary">$</span>
+                <div>
+                    <h3 class="font-bold font-title text-primary text-7xl">40</h3>
+                </div>
+            </div>
+
+            <div class="font-body text-sm text-center text-0JZnft6S-price-plan">Per month</div>
+        </div>
+
+        <div class="mt-4">
+            <a href="https://card-world.hyper.co/" class="inline-block bg-primary py-2 px-4 rounded-button text-base font-medium text-primary-button-text transition-colors duration-300 ease-in-out hover:bg-primary-700" >
+            Sign up!
+        </a>
+    
+        </div>
+    </div>    
+</div>            </div>
+            </section>
+
+                    <section id="call-to-action-1" class="relative py-20  px-4 md:px-8   overflow-hidden">
+        
+        <div class="pointer-events-none absolute z-[-1] inset-0  bg-body  "></div>
+
+                    <div class="max-w-6xl mx-auto">
+                <div class="px-6 py-8 rounded-2xl shadow-main md:px-12 md:py-16 bg-TqoVE6HB-background text-center"  data-aos="fade-up">
+    <div class="max-w-none mx-auto md:max-w-2xl">
+        <h3 class="text-4xl font-bold font-title text-header text-TqoVE6HB-header">Join our discord server for more info!</h3>
+        <div class="mt-2 text-lg text-content text-TqoVE6HB-body"></div>
+
+                    <div class="flex items-center justify-center space-x-4 mt-6 text-TqoVE6HB-header">
+                                    <a href="discord.gg/cardworld" class="inline-block bg-secondary py-2 px-4 rounded-button text-base font-medium text-secondary-button-text transition-colors duration-300 ease-in-out hover:bg-secondary-700 px-7 py-4 text-lg" >
+            Discord Invite
+        </a>
+    
+                                    <a href="mailto:info@card-world.io" class="inline-block bg-secondary py-2 px-4 rounded-button text-base font-medium text-secondary-button-text transition-colors duration-300 ease-in-out hover:bg-secondary-700 px-7 py-4 text-lg" >
+            Contact Us
+        </a>
+    
+                            </div>
+            </div>
+</div>
+            </div>
+            </section>
+
+                    <footer class="px-4  py-8  bg-YVBTqAUjdYN8LPjROzFV-background md:px-8">
+	<div class="max-w-6xl mx-auto">
+		<div
+			class="flex justify-between space-y-4 md:items-end"
+		>
+			<div>
+				<img
+					class="max-h-12 w-auto mb-4"
+					src="assets/cardworldlogo.png"
+				/>
+
+									<p class="text-xs text-YVBTqAUjdYN8LPjROzFV-link">© 2022 <span>Card World LLC</span></p>
+											</div>
+
+            <div>
+									<div class="flex mb-4 space-x-2 md:justify-end">
+													<a href="https://twitter.com/https://twitter.com/CardWorldIO" class="text-YVBTqAUjdYN8LPjROzFV-link" target="_blank">
+								<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+								</svg>
+							</a>
+						
+													<a href="https://www.instagram.com/https://www.instagram.com/cardworld.io/" class="text-YVBTqAUjdYN8LPjROzFV-link" target="_blank">
+								<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+								</svg>
+							</a>
+											</div>
+				
+				<div class="flex flex-col md:flex-row md:space-x-4">
+											<a href="https://app.termly.io/document/terms-of-use-for-ecommerce/f67ac99a-5fb1-494b-90c1-e36ebd26fab3"  target="_blank"  class="text-sm text-YVBTqAUjdYN8LPjROzFV-link hover:text-YVBTqAUjdYN8LPjROzFV-link-hover">Terms of service</a>
+											<a href="https://cardworldio.myshopify.com/58218840272/policies/privacy-policy.html?locale=en"  target="_blank"  class="text-sm text-YVBTqAUjdYN8LPjROzFV-link hover:text-YVBTqAUjdYN8LPjROzFV-link-hover">Privacy Policy</a>
+											<a href="https://card-world.hyper.co/login"  class="text-sm text-YVBTqAUjdYN8LPjROzFV-link hover:text-YVBTqAUjdYN8LPjROzFV-link-hover">Dashboard</a>
+									</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+            </main>
+    
+    <script>
+		AOS.init({
+            once: true
+        });
+    </script>
+
+    <script src="assets/scripts.js"></script>
+</body>
+</html>
